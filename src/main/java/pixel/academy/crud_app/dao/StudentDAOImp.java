@@ -1,6 +1,6 @@
 package pixel.academy.crud_app.dao;
 
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,6 +22,6 @@ public class StudentDAOImp implements StudentDAO {
     @Override
     @Transactional
     public void save(Student theStudent) {
-
+        entityManager.persist(theStudent);
     }
 }
