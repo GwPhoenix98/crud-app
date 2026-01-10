@@ -2,7 +2,6 @@ package pixel.academy.crud_app.entity;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name="student")
 public class Student {
