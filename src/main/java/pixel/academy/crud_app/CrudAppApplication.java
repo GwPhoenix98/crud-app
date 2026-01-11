@@ -23,10 +23,12 @@ public class CrudAppApplication {
 //            createMultipleStudents(studentDAO);
 //            readStudent(studentDAO);
 //            queryForStudents(studentDAO);
+//            queryForStudentsByLastName(studentDAO);
 
-            queryForStudentsByLastName(studentDAO);
+            updateStudent(studentDAO);
         };
     }
+
 
     private void createStudent(StudentDAO studentDAO) {
 
@@ -103,4 +105,21 @@ public class CrudAppApplication {
         }
     }
 
+    private void updateStudent(StudentDAO studentDAO) {
+
+        // find the student in the database using the ID
+        int studentId = 3;
+        System.out.println("getting student with id: " + studentId);
+        Student newStudent = studentDAO.findById(studentId);
+
+        // change the student's first name to "Ion"
+        System.out.println("Updating student ...");
+        newStudent.setFirstName("Ion");
+
+        // save changes to the database
+        studentDAO.update(newStudent);
+
+        // displays updated student details
+        System.out.println("Update student: " + newStudent);
+    }
 }
