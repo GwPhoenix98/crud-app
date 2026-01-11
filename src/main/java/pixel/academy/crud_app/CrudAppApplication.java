@@ -17,11 +17,13 @@ public class CrudAppApplication {
     @Bean
     public CommandLineRunner comandLineRunner (StudentDAO studentDAO) {
         return runner -> {
-            createStudent(studentDAO);
+//            createStudent(studentDAO);
+
+            createMultipleStudents(studentDAO);
         };
     }
 
-    private  void createStudent(StudentDAO studentDAO) {
+    private void createStudent(StudentDAO studentDAO) {
 
         // create a Student object
         System.out.println("Creating new student object ...");
@@ -35,4 +37,19 @@ public class CrudAppApplication {
         System.out.println("Saved student. Generated id:" + newStudent.getId());
     }
 
+    private void createMultipleStudents(StudentDAO studentDAO) {
+
+        // create a Student objects
+        System.out.println("Creating 3 student objects ...");
+        Student newStudent1 = new Student("Sandu", "Cotorobai", "sandu@gmail.com");
+        Student newStudent2 = new Student("Mihai", "Mihalici", "mihai@gmail.com");
+        Student newStudent3 = new Student("Maria", "Miarbela", "maria@gmail.com");
+
+        // save the Student objects in the database
+        System.out.println("Saving the students ...");
+        studentDAO.save(newStudent1);
+        studentDAO.save(newStudent2);
+        studentDAO.save(newStudent3);
+
+    }
 }
