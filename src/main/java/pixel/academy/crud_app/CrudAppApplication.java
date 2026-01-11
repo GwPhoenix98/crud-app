@@ -102,4 +102,5 @@ public class CrudAppApplication {
             System.out.println(newStudent);
         }
     }
+
 }
