@@ -80,7 +80,7 @@ public class StudentDAOImp implements StudentDAO {
     public int deleteALL() {
 
         int numRowsDeleted = entityManager.createQuery("DELETE FROM Student").executeUpdate();
-        return 0;
+        return numRowsDeleted;
     }
 
 }
