@@ -26,8 +26,8 @@ public class CrudAppApplication {
 //            queryForStudents(studentDAO);
 //            queryForStudentsByLastName(studentDAO);
 //            updateStudent(studentDAO);
-
-            deleteStudent(studentDAO);
+//            deleteStudent(studentDAO);
+            deleteALLStudents(studentDAO);
         };
     }
 
@@ -130,5 +130,12 @@ public class CrudAppApplication {
         System.out.println("Deleting student id: " + studentId);
         studentDAO.delete(studentId);
 
+    }
+
+    private void deleteALLStudents(StudentDAO studentDAO) {
+
+        System.out.println("Deleting all students.");
+        int numRowsDeleted = studentDAO.deleteALL();
+        System.out.println("Deleted row count: " + numRowsDeleted);
     }
 }
