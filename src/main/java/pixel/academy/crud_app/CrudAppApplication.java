@@ -17,8 +17,9 @@ public class CrudAppApplication {
 	}
 
     @Bean
-    public CommandLineRunner comandLineRunner (StudentDAO studentDAO) {
+    public CommandLineRunner commandLineRunner (StudentDAO studentDAO) {
         return runner -> {
+
 //            createStudent(studentDAO);
 //            createMultipleStudents(studentDAO);
 //            readStudent(studentDAO);
